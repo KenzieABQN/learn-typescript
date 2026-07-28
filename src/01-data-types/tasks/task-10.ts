@@ -16,3 +16,17 @@
  * 2. Store the product data in a single collection.
  * 3. Display the product data using console.log.
  */
+
+let cart: {code: String, name: String, price: number, quantity: number, freeShipping: boolean}[] = [
+    {code: `KB001`, name: `Mechanical Keyboard`, price: 850000, quantity: 1, freeShipping: true},
+    {code: `MS002`, name: `Wireless Mouse`, price: 275000, quantity: 2, freeShipping: true},
+    {code: `HD003`, name: `External SSD 1TB`, price: 1650000, quantity: 1, freeShipping: false},
+    {code: `HP004`, name: `Mechanical Keyboard`, price: 850000, quantity: 1, freeShipping: true},
+]
+
+console.log(`| Product Code | Product Name        | Price   | Quantity | Free Shipping |`)
+console.log(`| ------------ | ------------------- | ------- | -------- | ------------- |`)
+console.log(`| ${cart[0].code} | ${cart[0].name} | ${cart[0].price} | ${cart[0].quantity} | ${cart[0].freeShipping} |`)
+console.log(`| ${cart[1].code} | ${cart[1].name} | ${cart[1].price} | ${cart[1].quantity} | ${cart[1].freeShipping} |`)
+console.log(`| ${cart[2].code} | ${cart[2].name} | ${cart[2].price} | ${cart[2].quantity} | ${cart[2].freeShipping} |`)
+console.log(`| ${cart[3].code} | ${cart[3].name} | ${cart[3].price} | ${cart[3].quantity} | ${cart[3].freeShipping} |`)
