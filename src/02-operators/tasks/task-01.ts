@@ -14,3 +14,34 @@
  *  - Final payment
  * 2. Display the calculation results.
  */
+
+// declare type for per item information
+type info = {
+    name: String
+    price: number
+    amount: number
+}
+
+const item1: info = {
+    name: `Fried Rice`,
+    price: 18000,
+    amount: 3
+}
+
+const item2: info = {
+    name: `Mineral Water`,
+    price: 5000,
+    amount: 2
+}
+
+const discount: number = 10000
+const foodPrice: number = item1.price * item1.amount
+const drinkPrice: number = item2.price * item2.amount
+const total: number = foodPrice + drinkPrice
+const finalPrice: number = total - discount
+
+console.log(`Raka's Order`)
+console.log(`Food Price: ${foodPrice}`)
+console.log(`Drink Price: ${drinkPrice}`)
+console.log(`Total ${total}`)
+console.log(`Amount Paid (After Discount) ${finalPrice}`)

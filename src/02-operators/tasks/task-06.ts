@@ -13,3 +13,29 @@
  * - Discount amount
  * - Final payment
  */
+
+// declaring bills
+const bill: number = 8000
+const playingMinutes: number = 60 * 7 + 35
+const playingHours: number = 8
+let remainingMinutes: number = playingHours * 60
+remainingMinutes -= playingMinutes
+
+const discount: number = 0.15
+let discountEligible: boolean = playingMinutes > 360 ? true : false 
+
+const billedHours: number = playingHours
+const total: number = billedHours * bill
+
+let finalPayment: number = total
+finalPayment = discountEligible == true ? finalPayment -= finalPayment * discount : finalPayment
+
+console.log(`== Billing Information ==`)
+console.log(`Total Playing Time (Minutes): ${playingMinutes}`)
+console.log(`Remaining Minutes: ${remainingMinutes}`)
+console.log(`Total Billed Hours: ${billedHours}`)
+
+console.log()
+
+console.log(`Total ${total}`)
+console.log(`Final Payment: ${finalPayment}`)

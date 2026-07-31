@@ -10,6 +10,7 @@
  * display the student data using console.log.
  */
 
+// defining student type to reduce redundancy
 type Student = {
     ID: String
     fullName: String

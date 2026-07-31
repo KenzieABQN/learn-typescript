@@ -33,3 +33,38 @@
  * - Calculate the remaining scholarship budget.
  * - Display whether the student is accepted.
  */
+
+
+
+const student: {
+    name: String
+    gpa: number
+    familyIncome: number
+    competitionCount: number
+    disciplinaryRecord: boolean
+    completedDocuments: boolean
+} = {
+    name: `Alya Putri`,
+    gpa: 3.89,
+    familyIncome: 4200000,
+    competitionCount: 4,
+    disciplinaryRecord: false,
+    completedDocuments: true
+}
+
+let scholarshipBudget: number = 500000000
+
+// determining if eligible
+let eligible: boolean = student.gpa >= 3.75 && student.familyIncome < 5000000
+ && student.competitionCount >= 3
+ && student.disciplinaryRecord == false 
+ && student.completedDocuments == true ? true : false
+
+let scholarshipAmount: number = eligible == true ? 12000000 : 0
+
+scholarshipBudget -= scholarshipAmount
+
+console.log(`== Scholarship Info ==`)
+console.log(`Scholarship Amount: ${scholarshipAmount}`)
+console.log(`Remaining Scholarship Budget: ${scholarshipBudget}`)
+console.log(`Accepted: ${eligible}`)
