@@ -16,8 +16,11 @@
 
 // declaring bills
 const bill: number = 8000
-const playingMinutes: number = 60 * 7 + 35
-const playingHours: number = 8
+let hours: number = 7
+const minutes: number = 35
+const playingMinutes: number = 60 * hours + minutes
+const playingHours: number = minutes > 0 ? hours + 1 : hours
+
 let remainingMinutes: number = playingHours * 60
 remainingMinutes -= playingMinutes
 
