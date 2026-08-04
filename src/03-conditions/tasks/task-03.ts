@@ -18,3 +18,22 @@
  * 2. Implement the business rules using if...else if...else.
  * 3. Display the recommended package.
  */
+
+// declare variables
+const name: String = `Raka Saputra`
+const monthlyUsageGB: number = 124
+let reccomendedPackage: String
+
+console.log(`Name: ${name}`);
+
+// determing reccomended package
+if(monthlyUsageGB >= 150) {
+    reccomendedPackage = `Premium`
+} else if (monthlyUsageGB >= 50){
+    reccomendedPackage = `Standard`
+} else {
+    reccomendedPackage = `Basic`
+}
+
+// prints output
+console.log(`Reccomended Package: ${reccomendedPackage}`);

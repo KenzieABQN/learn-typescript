@@ -27,3 +27,32 @@
  * 2. Implement the airline decision process.
  * 3. Display the correct message.
  */
+
+// declare variables
+let passenger: {
+    name: String
+    onlineCheckIn: boolean
+    businessClass: boolean
+    baggageWeightKg: number
+} = {
+    name: `Fajar Nugroho`,
+    onlineCheckIn: true,
+    businessClass: false,
+    baggageWeightKg: 24
+}
+
+let printBoardingPass: boolean = false
+let notes: String = ``
+
+// deciding message
+if (!passenger.onlineCheckIn) {
+    console.log(`Please complete Online Check-In first`)
+} else {
+    console.log(`== Boarding Pass ==`)
+    console.log(`Name: ${passenger.name}`)
+    console.log(`Class: ${passenger.businessClass ? `Business` : `Economy`}`)
+    if(passenger.baggageWeightKg >= 20) {
+        notes = passenger.businessClass ? `Extra Baggage Allowed` : `Additional Baggage Fee Required` 
+        console.log(`Notes: ${notes}`)
+    }
+}

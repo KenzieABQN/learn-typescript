@@ -14,3 +14,18 @@
  * 3. Display the evaluation result. If eligible will display "Bonus Approved", 
  * otherwise display "Bonus not approved"
  */
+
+// declare variables
+const name: String = `Dimas Pratama`
+const performance: number = 78
+// checking for bonus eligibility
+const bonus: boolean = performance >= 80 ? true : false
+
+console.log(`Employee: ${name}`);
+
+// prints output based on bonus eligibility
+if (bonus) {
+    console.log(`Bonus Approved!`)
+} else {
+    console.log(`Bonus not approved.`)
+}

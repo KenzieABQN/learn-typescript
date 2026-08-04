@@ -24,7 +24,6 @@
  * Display one of the following messages:
  *  - Scholarship Approved
  *  - Passed First Screening, but Failed Second Screening
- *  - Passed First Screening, but Failed Second Screening
  * 
  * Student Tasks
  *  - Declare all variables.
@@ -32,3 +31,45 @@
  *  - Implement the second screening only if the first screening is passed.
  *  - Display the correct result.
  */
+
+// declare variables
+let studentInfo : {
+    name: String
+    GPA: number
+    familyIncome: number
+    competitionCount: number
+    hasDisciplinaryRecord: boolean
+    completedDocuments: boolean
+} = {
+    name: `Fajar Hidayat`,
+    GPA: 3.86,
+    familyIncome: 4200000,
+    competitionCount: 4,
+    hasDisciplinaryRecord: false,
+    completedDocuments: true
+}
+
+let firstScreening: boolean = false
+let secondScreening: boolean = false
+
+console.log(`Name: ${studentInfo.name}`)
+
+// first screening qualification
+if(studentInfo.GPA >= 3.75 && studentInfo.familyIncome) {
+    firstScreening = true
+    // second screening qualification
+    if(studentInfo.competitionCount >= 3 && !studentInfo.hasDisciplinaryRecord && studentInfo.completedDocuments) {
+        secondScreening = true
+    }
+} else {
+    console.log(`Scholarship not approved :(`);
+}
+
+// printing output
+if(firstScreening) {
+    if(secondScreening) {
+        console.log(`Scholarship Approved!`)
+    } else {
+    console.log(`First screening approved, but Second screening not approved :(`)
+    }
+} 
