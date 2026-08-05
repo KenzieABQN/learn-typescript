@@ -25,3 +25,55 @@ const submissions = [
     { student: "Gita", submitted: true, score: 90 },
     { student: "Hana", submitted: true, score: 73 }
 ];
+
+let studentsWhoSubmitted: number = 0
+let studentsWhoDidntSubmit: number = 0
+let passingStudents: number = 0
+let revisingStudents: number = 0
+let totalScore: number = 0
+
+for (let i = 0; i < submissions.length; i++) {
+    if (!submissions[i].submitted) {
+        studentsWhoDidntSubmit++
+    } else {
+        studentsWhoSubmitted++
+        if (submissions[i].score < 75) {
+            revisingStudents++
+        } else {
+            passingStudents++
+        }
+    }
+
+    totalScore += submissions[i].score
+}
+
+let averageScore: number = totalScore / submissions.length
+
+console.log(`Students who submitted their assignment: ${studentsWhoSubmitted}`);
+console.log(`Students who didnt submit their assignment: ${studentsWhoDidntSubmit}`);
+console.log(`Students who pass: ${passingStudents}`);
+console.log(`Students who must revise their assignment: ${revisingStudents}`);
+
+console.log(`-------`);
+
+console.log(`Students who did not submit:`)
+for (let i = 0; i < submissions.length; i++) {
+    if (submissions[i].submitted) {
+        console.log(submissions[i].student);
+    }
+}
+
+console.log()
+
+console.log(`Students who must revise their assignment:`)
+for (let i = 0; i < submissions.length; i++) {
+    if(submissions[i].score < 75) {
+        console.log(submissions[i].student);
+    }
+}
+
+console.log(`-------`);
+
+console.log(`Average Score: ${averageScore}`);
+
+
